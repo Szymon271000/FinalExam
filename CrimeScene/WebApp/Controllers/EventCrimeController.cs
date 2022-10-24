@@ -12,10 +12,11 @@ namespace WebApp.Controllers
         {
             _eventCrimeManager = eventCrimeManager;
         }
-        public async Task<IActionResult> Index(List<ReadCrimeEventDTO> crimes)
+        public async Task<IActionResult> Index()
         {
             var result = await _eventCrimeManager.FetchAllCrimes();
-            return View(result);
+            var crimesToDisplay = result.Where(x=> x.isFinished == false).ToList();
+            return View(crimesToDisplay);
         }
 
         public ActionResult AddCrime()
@@ -30,6 +31,25 @@ namespace WebApp.Controllers
             {
                 await _eventCrimeManager.AddEventCrime(crime);
             }
+            return RedirectToAction("Index", "EventCrime");
+        }
+
+        public async Task<ActionResult> Details(string crimeId)
+        {
+            var crime = await _eventCrimeManager.GetById(crimeId);
+            return View(crime);
+        }
+
+
+        public async Task<ActionResult> ChangeAssignStatus(string crimeId, string lawEnforcementId)
+        {
+            await _eventCrimeManager.ChangeAssignStatus(crimeId, lawEnforcementId);
+            return RedirectToAction("Index", "EventCrime");
+        }
+
+        public async Task<ActionResult> ChangeStatusIsFinished(string crimeId)
+        {
+            await _eventCrimeManager.UpdateStatusIsFinished(crimeId);
             return RedirectToAction("Index", "EventCrime");
         }
     }

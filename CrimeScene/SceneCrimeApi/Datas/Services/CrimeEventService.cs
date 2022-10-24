@@ -37,10 +37,11 @@ namespace SceneCrimeApi.Datas.Services
             return await _crimeEvents.Find(crime => true).ToListAsync();
         }
 
-        public async Task UpdateStatusIsAssigned(string id)
+        public async Task UpdateStatusIsAssigned(string id, string lawEnforcementId)
         {
             var crimeEvent = await GetCrimeEvent(id);
             crimeEvent.isAssigend = true;
+            crimeEvent.lawEnforcementId = lawEnforcementId;
             await _crimeEvents.ReplaceOneAsync(x => x.Id == crimeEvent.Id, crimeEvent);
         }
 

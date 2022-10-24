@@ -1,11 +1,22 @@
 {
   "Version": 1,
-  "Hash": "7M0o7NtxPqUw/8p32FH17sNKCatPYSFS/PGEq7KsfCI=",
+  "Hash": "u1YH7EBOia9/2VjN7Wpzzmhw4vljw5f63ETsy7zNQZU=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\QVXP36\\Desktop\\FinalExam\\CrimeScene\\CrimeScene\\CrimeScene.csproj",
+      "Version": 2,
+      "Source": "CrimeScene",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    },
     {
       "Identity": "C:\\Users\\QVXP36\\Desktop\\FinalExam\\CrimeScene\\SceneCrimeApi\\SceneCrimeApi.csproj",
       "Version": 2,

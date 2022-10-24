@@ -1,0 +1,48 @@
+﻿@using SceneCrimeApi.DTOs
+@model ReadCrimeEventDTO
+
+<div class="col-md-5">
+        <form method="GET" asp-action="Details" class="row" autocomplete="off" >
+        </form>
+</div>
+<div>
+    @Html.DisplayFor(modelItem => Model.Id)
+    <br />
+    @Html.DisplayFor(modelItem => Model.type)
+    <br />
+
+    @Html.DisplayFor(modelItem => Model.shortDescription)
+    <br />
+
+    @Html.DisplayFor(modelItem => Model.city) 
+    <br />
+
+    @Html.DisplayFor(modelItem => Model.address) 
+    <br />
+
+    @Html.DisplayFor(modelItem => Model.postalCode) 
+    <br />
+
+    @Html.DisplayFor(modelItem => Model.isAssigend) 
+    <br />
+
+    @Html.DisplayFor(modelItem => Model.isFinished) 
+    <br />
+
+    @Html.DisplayFor(modelItem => Model.lawEnforcementId) 
+    <br />
+</div>
+
+<form asp-controller="EventCrime" asp-action="ChangeAssignStatus" asp-route-crimeId=@Model.Id asp-route-lawEnforcementId=lawEnforcementId autocomplete="off">
+
+<label asp-for="lawEnforcementId" class="control-label"></label>
+<input asp-for="lawEnforcementId" class="form-control" />
+<span asp-validation-for="lawEnforcementId" class="text-danger"></span>
+           
+<input type="submit" value="AssignToPoliceMan" class="btn btn-primary w-100" />
+<a asp-action="Index" class="btn btn-secondary w-100">View all</a>
+</form>
+
+<form asp-controller="EventCrime" asp-action="ChangeStatusIsFinished" asp-route-crimeId=@Model.Id autocomplete="off">
+<input type="submit" value="Completed" class="btn btn-primary w-100" />
+</form>

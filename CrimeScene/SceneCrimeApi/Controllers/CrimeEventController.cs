@@ -81,10 +81,10 @@ namespace SceneCrimeApi.Controllers
         }
 
         [HttpPut]
-        [Route("UpdateIsAssinged/{id}")]
-        public async Task<IActionResult> UpdateStatusIsAssigned(string id)
+        [Route("UpdateIsAssinged/{id}/{lawEnforcementId}")]
+        public async Task<IActionResult> UpdateStatusIsAssigned(string id, string lawEnforcementId)
         {
-            await _crimeEventService.UpdateStatusIsAssigned(id);
+            await _crimeEventService.UpdateStatusIsAssigned(id, lawEnforcementId);
             return Ok();
         }
 
@@ -92,7 +92,7 @@ namespace SceneCrimeApi.Controllers
         [Route("UpdateIsFinished/{id}")]
         public async Task<IActionResult> UpdateStatusIsFinished(string id)
         {
-            await _crimeEventService.UpdateStatusIsAssigned(id);
+            await _crimeEventService.UpdateStatusIsFinished(id);
             return Ok();
         }
     }

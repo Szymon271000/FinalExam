@@ -11,7 +11,7 @@ namespace SceneCrimeApi.Datas.Services
         Task DeleteBook(string id);
 
         Task<List<CrimeEvent>> GetAllEventsOfGivenPoliceMan(string policemanId);
-        Task UpdateStatusIsAssigned(string id);
+        Task UpdateStatusIsAssigned(string id, string lawEnforcementId);
         Task UpdateStatusIsFinished(string id);
     }
 }
