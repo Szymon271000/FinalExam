@@ -16,12 +16,12 @@ namespace CrimeScene.Repository
 
         public async Task<List<LawEnforcement>> GetAll()
         {
-            return await _lawEnforcementContext.lawEnforcements.Include(x=> x.RankEnforcement).ToListAsync();   
+            return await _lawEnforcementContext.lawEnforcements.Include(x=> x.Events).Include(x=> x.RankEnforcement).ToListAsync();   
         }
 
         public async Task<LawEnforcement> GetById(Guid id)
         {
-            return await _lawEnforcementContext.lawEnforcements.Include(x => x.RankEnforcement).FirstOrDefaultAsync();
+            return await _lawEnforcementContext.lawEnforcements.Include(x=> x.Events).Include(x => x.RankEnforcement).FirstOrDefaultAsync();
         }
 
         public async Task Save()
