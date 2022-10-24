@@ -1,0 +1,79 @@
+﻿@using SceneCrimeApi.DTOs
+@model IEnumerable<ReadCrimeEventDTO>
+
+
+<h1>Materials</h1>
+
+<div class="col-md-5">
+        <form method="GET" asp-action="Index" class="row" autocomplete="off" >
+        </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                DateTime
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Short Description
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                postalCode
+            </th>
+            <th>
+                isAssigend
+            </th>
+            <th>
+                isFinished
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOfEvent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shortDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postalCode) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isAssigend) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isFinished) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lawEnforcementId) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

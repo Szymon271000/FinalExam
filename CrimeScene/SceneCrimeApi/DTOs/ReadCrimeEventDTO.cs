@@ -2,6 +2,8 @@
 {
     public class ReadCrimeEventDTO
     {
+        public string? Id { get; set; }
+
         public DateTime dateOfEvent { get; set; }
         public string? type { get; set; }
 
