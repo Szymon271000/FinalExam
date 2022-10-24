@@ -1,6 +1,4 @@
-﻿using SceneCrimeApi.Datas.Models;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CrimeScene.Datas.Models
 {
@@ -11,6 +9,8 @@ namespace CrimeScene.Datas.Models
         [Key]   
         public Guid Id { get; set; }
         public Rank? RankEnforcement { get; set; }
-        public List<CrimeEvent>? crimeEvents { get; set; }
+
+        public List<CrimeEvent>? Events { get; set; }
+
     }
 }

@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "b+NGF/kXeItj+Ghax39YmgiFMCxiPOVPwHpVQ5WF+Jw=",
+  "Hash": "xjNYEuOUpotZWUgR1+f9t/Z4UkbIM9xX1Ij8F3cLIyo=",
   "Source": "CrimeScene",
   "BasePath": "_content/CrimeScene",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "C:\\Users\\QVXP36\\Desktop\\FinalExam\\CrimeScene\\SceneCrimeApi\\SceneCrimeApi.csproj",
-      "Version": 2,
-      "Source": "SceneCrimeApi",
-      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
   "Assets": []
 }

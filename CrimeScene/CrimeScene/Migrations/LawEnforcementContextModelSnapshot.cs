@@ -22,6 +22,24 @@ namespace CrimeScene.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("CrimeScene.Datas.Models.CrimeEvent", b =>
+                {
+                    b.Property<string>("EventId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("LawEnforcementId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("EventId");
+
+                    b.HasIndex("LawEnforcementId");
+
+                    b.ToTable("crimeEvents");
+                });
+
             modelBuilder.Entity("CrimeScene.Datas.Models.LawEnforcement", b =>
                 {
                     b.Property<Guid>("Id")
@@ -54,46 +72,11 @@ namespace CrimeScene.Migrations
                     b.ToTable("ranks");
                 });
 
-            modelBuilder.Entity("SceneCrimeApi.Datas.Models.CrimeEvent", b =>
+            modelBuilder.Entity("CrimeScene.Datas.Models.CrimeEvent", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<Guid?>("LawEnforcementId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("city")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("dateOfEvent")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("isAssigend")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("isFinished")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("lawEnforcement")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float?>("postalCode")
-                        .HasColumnType("real");
-
-                    b.Property<string>("shortDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LawEnforcementId");
-
-                    b.ToTable("CrimeEvent");
+                    b.HasOne("CrimeScene.Datas.Models.LawEnforcement", null)
+                        .WithMany("Events")
+                        .HasForeignKey("LawEnforcementId");
                 });
 
             modelBuilder.Entity("CrimeScene.Datas.Models.LawEnforcement", b =>
@@ -105,16 +88,9 @@ namespace CrimeScene.Migrations
                     b.Navigation("RankEnforcement");
                 });
 
-            modelBuilder.Entity("SceneCrimeApi.Datas.Models.CrimeEvent", b =>
-                {
-                    b.HasOne("CrimeScene.Datas.Models.LawEnforcement", null)
-                        .WithMany("crimeEvents")
-                        .HasForeignKey("LawEnforcementId");
-                });
-
             modelBuilder.Entity("CrimeScene.Datas.Models.LawEnforcement", b =>
                 {
-                    b.Navigation("crimeEvents");
+                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }

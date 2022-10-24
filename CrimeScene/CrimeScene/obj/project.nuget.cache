@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bZIPnE5HRV14EL6SpBZRL8OU7FAxQZYdQPI1XmF5HtyjLbtBy+P7CFyCcD8EvJuNnZxz79b0pguv5/97WaiQMw==",
+  "dgSpecHash": "4SjF8kUCbmUonjMRLnP/k7YeXmsOjdbGJ9GOS8vlC0xYUx04ZxJudkaJ8WqIbDQf/B1ikHdjjPXwiHavK466gQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\QVXP36\\Desktop\\FinalExam\\CrimeScene\\CrimeScene\\CrimeScene.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\QVXP36\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\QVXP36\\.nuget\\packages\\json.net\\1.0.33\\json.net.1.0.33.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

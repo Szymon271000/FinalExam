@@ -1,6 +1,5 @@
 ﻿using CrimeScene.Datas.Models;
 using Microsoft.EntityFrameworkCore;
-
 namespace CrimeScene.Datas.Context
 {
     public class LawEnforcementContext:DbContext
@@ -12,5 +11,6 @@ namespace CrimeScene.Datas.Context
 
         public DbSet<LawEnforcement> lawEnforcements { get; set; }
         public DbSet<Rank> ranks { get; set; }
+        public DbSet<CrimeEvent> crimeEvents { get; set; }
     }
 }

@@ -14,14 +14,7 @@ namespace WebApp.Services
         }
         public async Task<List<ReadCrimeEventDTO>> FetchAllCrimes()
         {
-            var response = await _httpClient.GetAsync("http://localhost:5296/api/CrimeEvent/GetAllCrimes");
-            if (response.IsSuccessStatusCode)
-            {
-                Newtonsoft.Json.JsonSerializer serializer = new();
-                return serializer.Deserialize<List<ReadCrimeEventDTO>>(new JsonTextReader(new StringReader(await response.Content.ReadAsStringAsync())));
-
-            }
-            return null;
+            return await _httpClient.GetFromJsonAsync<List<ReadCrimeEventDTO>>("http://localhost:5296/api/CrimeEvent/GetAllCrimes");
         }
         public async Task AddEventCrime(CreateCrimeEventDTO eventCrime)
         {

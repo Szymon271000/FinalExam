@@ -8,7 +8,8 @@
         <form method="GET" asp-action="Index" class="row" autocomplete="off" >
         </form>
 </div>
-<table class="table">
+<input id="lawEnforcementIdInput" />
+<table class="table" id="crimeTable">
     <thead>
         <tr>
             <th>
@@ -82,7 +83,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.isFinished) 
             </td>
-            <td>
+            <td name="lawEnforcementId">
                 @Html.DisplayFor(modelItem => item.lawEnforcementId) 
             </td>
             <td>

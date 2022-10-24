@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6rhKDXAxynHtK8OIOIpgrj5MaOM43gjW2JGJER0T+kc6IEAGkDVX2Ymfulsj5SA9MBPDZqME169ELsC3/wfCrQ==",
+  "dgSpecHash": "F9ZkfA39IeNoFUIj84r+XKE7I5D6KMFxgbHFL0PklAdcA/cvbvuDfKpeePYWMJSj19LTH2VEiVv4d4EC7CxQ/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\QVXP36\\Desktop\\FinalExam\\CrimeScene\\SceneCrimeApi\\SceneCrimeApi.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\QVXP36\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\QVXP36\\.nuget\\packages\\json.net\\1.0.33\\json.net.1.0.33.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",

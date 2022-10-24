@@ -1,7 +1,7 @@
-﻿using CrimeScene.Repository;
+﻿using CrimeScene.Datas.Models;
+using CrimeScene.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SceneCrimeApi.Datas.Models;
 
 namespace CrimeScene.Controllers
 {
@@ -10,9 +10,11 @@ namespace CrimeScene.Controllers
     public class LawEnforcementController : ControllerBase
     {
         private readonly ILawEnforcementRepository _lawEnforcementRepository;
-        public LawEnforcementController(ILawEnforcementRepository lawEnforcementRepository)
+        private readonly IEventCrimeRepository _eventCrimeRepository;
+        public LawEnforcementController(ILawEnforcementRepository lawEnforcementRepository, IEventCrimeRepository eventCrimeRepository)
         {
             _lawEnforcementRepository = lawEnforcementRepository;
+            _eventCrimeRepository = eventCrimeRepository;
         }
 
         [HttpGet]
@@ -23,20 +25,21 @@ namespace CrimeScene.Controllers
             return Ok(policemen);
         }
 
+
+        [HttpPost]
+        [Route("AddCrime")]
+        public async Task<IActionResult> AddCrime(CrimeEvent crimeEvent)
+        {
+            await _eventCrimeRepository.Add(crimeEvent);
+            return Ok();
+        }
+
         [HttpGet]
         [Route("GetById/{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
             var policeman = await _lawEnforcementRepository.GetById(id);
             return Ok(policeman);
-        }
-
-        [HttpPost]
-        [Route("AddEvent/{policemenId}")]
-        public async Task<IActionResult> AddCrimeToPolicemen(Guid policemenId, CrimeEvent crimeEvent)
-        {
-            _lawEnforcementRepository.AddCrimeToPolicemen(policemenId, crimeEvent);
-            return NoContent();
         }
     }
 }

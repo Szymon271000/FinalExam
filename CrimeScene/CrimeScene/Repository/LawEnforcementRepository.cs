@@ -1,7 +1,6 @@
 ﻿using CrimeScene.Datas.Context;
 using CrimeScene.Datas.Models;
 using Microsoft.EntityFrameworkCore;
-using SceneCrimeApi.Datas.Models;
 
 namespace CrimeScene.Repository
 {
@@ -12,21 +11,17 @@ namespace CrimeScene.Repository
         {
             _lawEnforcementContext = lawEnforcementContext;
         }
-        public async Task AddCrimeToPolicemen(Guid policemenId, CrimeEvent crimeEvent)
-        {
-            var policeMan = await GetById(policemenId);
-            policeMan.crimeEvents.Add(crimeEvent);
-            await Save();
-        }
+
+
 
         public async Task<List<LawEnforcement>> GetAll()
         {
-            return await _lawEnforcementContext.lawEnforcements.Include(x=> x.RankEnforcement).Include(x=> x.crimeEvents).ToListAsync();   
+            return await _lawEnforcementContext.lawEnforcements.Include(x=> x.RankEnforcement).ToListAsync();   
         }
 
         public async Task<LawEnforcement> GetById(Guid id)
         {
-            return await _lawEnforcementContext.lawEnforcements.Include(x => x.RankEnforcement).Include(x => x.crimeEvents).FirstOrDefaultAsync();
+            return await _lawEnforcementContext.lawEnforcements.Include(x => x.RankEnforcement).FirstOrDefaultAsync();
         }
 
         public async Task Save()

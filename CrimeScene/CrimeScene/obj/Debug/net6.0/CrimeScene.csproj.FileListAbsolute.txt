@@ -1,6 +1,3 @@
-C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\SceneCrimeApi.deps.json
-C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\SceneCrimeApi.runtimeconfig.json
-C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\SceneCrimeApi.exe
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\appsettings.json
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\CrimeScene.exe
@@ -60,8 +57,6 @@ C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\runtime
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\SceneCrimeApi.dll
-C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\SceneCrimeApi.pdb
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\obj\Debug\net6.0\CrimeScene.csproj.AssemblyReference.cache
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\obj\Debug\net6.0\CrimeScene.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\obj\Debug\net6.0\CrimeScene.AssemblyInfoInputs.cache
@@ -78,3 +73,4 @@ C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\obj\Debug\net6.0\refint\
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\obj\Debug\net6.0\CrimeScene.pdb
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\obj\Debug\net6.0\CrimeScene.genruntimeconfig.cache
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\obj\Debug\net6.0\ref\CrimeScene.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene\bin\Debug\net6.0\Json.Net.dll

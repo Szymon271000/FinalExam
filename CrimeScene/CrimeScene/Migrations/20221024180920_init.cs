@@ -40,34 +40,26 @@ namespace CrimeScene.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CrimeEvent",
+                name: "crimeEvents",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    dateOfEvent = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    type = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    shortDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    city = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    postalCode = table.Column<float>(type: "real", nullable: true),
-                    isAssigend = table.Column<bool>(type: "bit", nullable: true),
-                    isFinished = table.Column<bool>(type: "bit", nullable: true),
-                    lawEnforcement = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EventId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LawEnforcementId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CrimeEvent", x => x.Id);
+                    table.PrimaryKey("PK_crimeEvents", x => x.EventId);
                     table.ForeignKey(
-                        name: "FK_CrimeEvent_lawEnforcements_LawEnforcementId",
+                        name: "FK_crimeEvents_lawEnforcements_LawEnforcementId",
                         column: x => x.LawEnforcementId,
                         principalTable: "lawEnforcements",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CrimeEvent_LawEnforcementId",
-                table: "CrimeEvent",
+                name: "IX_crimeEvents_LawEnforcementId",
+                table: "crimeEvents",
                 column: "LawEnforcementId");
 
             migrationBuilder.CreateIndex(
@@ -79,7 +71,7 @@ namespace CrimeScene.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CrimeEvent");
+                name: "crimeEvents");
 
             migrationBuilder.DropTable(
                 name: "lawEnforcements");

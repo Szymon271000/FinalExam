@@ -87,3 +87,4 @@ C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\WebApp\bin\Debug\net6.0\runtimes\wi
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\WebApp\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\WebApp\bin\Debug\net6.0\CrimeScene.dll
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\WebApp\bin\Debug\net6.0\CrimeScene.pdb
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\WebApp\bin\Debug\net6.0\Json.Net.dll
