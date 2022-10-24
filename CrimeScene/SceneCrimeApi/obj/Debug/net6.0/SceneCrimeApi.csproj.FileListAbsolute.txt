@@ -38,3 +38,10 @@ C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\obj\Debug\net6.0\Scen
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\obj\Debug\net6.0\ref\SceneCrimeApi.dll
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\Humanizer.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll

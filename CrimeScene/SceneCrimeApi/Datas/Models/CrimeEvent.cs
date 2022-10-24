@@ -18,6 +18,6 @@ namespace SceneCrimeApi.Datas.Models
         public float? postalCode { get; set; }
         public bool? isAssigend { get; set; } = false;
         public bool? isFinished { get; set; } = false;
-        public string? lawEnforcementId { get; set; } = null;
+        public string? lawEnforcementId { get; set; } = string.Empty;
     }
 }

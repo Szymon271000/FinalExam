@@ -22,6 +22,11 @@ namespace SceneCrimeApi.Datas.Services
             await _crimeEvents.DeleteOneAsync(crime => crime.Id == id);
         }
 
+        public async Task<List<CrimeEvent>> GetAllEventsOfGivenPoliceMan(string policemanId)
+        {
+            return await _crimeEvents.Find(crime => crime.lawEnforcementId == policemanId).ToListAsync();
+        }
+
         public async Task<CrimeEvent> GetCrimeEvent(string id)
         {
             return await _crimeEvents.Find(crime => crime.Id == id).FirstAsync();

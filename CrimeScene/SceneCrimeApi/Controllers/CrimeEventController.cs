@@ -34,6 +34,19 @@ namespace SceneCrimeApi.Controllers
         }
 
         [HttpGet]
+        [Route("GetAllCrimesOfGivenPolicemen/{id}")]
+        public async Task<IActionResult> GetCrimeEventsOfPoliceman(string id)
+        {
+            var crimeEvents = await _crimeEventService.GetAllEventsOfGivenPoliceMan(id);
+            if (crimeEvents == null)
+            {
+                return this.NotFound("There is no crime events in context");
+            }
+            return Ok(_mapper.Map<IEnumerable<ReadCrimeEventDTO>>(crimeEvents));
+
+        }
+
+        [HttpGet]
         [Route("GetCrimeEventById/{id}")]
         public async Task<IActionResult> GetCrimeEventById(string id)
         {

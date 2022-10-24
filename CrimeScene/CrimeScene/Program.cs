@@ -1,8 +1,14 @@
+using CrimeScene.Datas.Context;
+using CrimeScene.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<LawEnforcementContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("ApiConnection")));
+builder.Services.AddScoped<ILawEnforcementRepository, LawEnforcementRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
