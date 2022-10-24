@@ -15,4 +15,8 @@
     <ProjectReference Include="..\SceneCrimeApi\SceneCrimeApi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Policemen\" />
+  </ItemGroup>
+
 </Project>

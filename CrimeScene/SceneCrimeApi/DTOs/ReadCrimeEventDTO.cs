@@ -16,5 +16,7 @@
         public bool? isAssigend { get; set; }
         public bool? isFinished { get; set; }
         public string? lawEnforcementId { get; set; }
+        public string? rapportPerson { get; set; }
+
     }
 }

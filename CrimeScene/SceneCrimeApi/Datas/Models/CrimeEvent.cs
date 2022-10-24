@@ -13,6 +13,7 @@ namespace SceneCrimeApi.Datas.Models
 
         public string? city { get; set; }
 
+        public string? rapportPerson { get; set; }
         public string? address { get; set; }
 
         public float? postalCode { get; set; }

@@ -25,7 +25,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCrimeToDatabase([Bind("type", "shortDescription", "city", "address", "postalCode")] CreateCrimeEventDTO crime)
+        public async Task<IActionResult> AddCrimeToDatabase([Bind("type", "shortDescription", "city", "address", "postalCode", "rapportPerson")] CreateCrimeEventDTO crime)
         {
             if (ModelState.IsValid)
             {

@@ -15,5 +15,8 @@ namespace SceneCrimeApi.DTOs
         public string? address { get; set; }
         [Required]
         public float? postalCode { get; set; }
+        [Required]
+        public string? rapportPerson { get; set; }
+
     }
 }
