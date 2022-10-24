@@ -36,3 +36,5 @@ C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\obj\Debug\net6.0\refi
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\obj\Debug\net6.0\SceneCrimeApi.pdb
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\obj\Debug\net6.0\SceneCrimeApi.genruntimeconfig.cache
 C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\obj\Debug\net6.0\ref\SceneCrimeApi.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
