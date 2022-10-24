@@ -6,13 +6,14 @@ namespace SceneCrimeApi.DTOs
     {
         [Required]
         public string? type { get; set; }
-
+        [Required]
         public string? shortDescription { get; set; }
 
         [Required]
         public string? city { get; set; }
         [Required]
         public string? address { get; set; }
+        [Required]
         public float? postalCode { get; set; }
     }
 }

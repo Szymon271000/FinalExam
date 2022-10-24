@@ -1,0 +1,58 @@
+﻿@using SceneCrimeApi.DTOs
+@model CreateCrimeEventDTO
+
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>Comment</h1>
+            <hr />
+        <form asp-action="AddCrimeToDatabase" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="type" class="control-label"></label>
+                <input asp-for="type" class="form-control" />
+                <span asp-validation-for="type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="shortDescription" class="control-label"></label>
+                <input asp-for="shortDescription" class="form-control" />
+                <span asp-validation-for="shortDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="city" class="control-label"></label>
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="address" class="control-label"></label>
+                <input asp-for="address" class="form-control" />
+                <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="postalCode" class="control-label"></label>
+                <input asp-for="postalCode" class="form-control" />
+                <span asp-validation-for="postalCode" class="text-danger"></span>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary w-100" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary w-100">View all</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

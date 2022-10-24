@@ -17,5 +17,20 @@ namespace WebApp.Controllers
             var result = await _eventCrimeManager.FetchAllCrimes();
             return View(result);
         }
+
+        public ActionResult AddCrime()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddCrimeToDatabase([Bind("type", "shortDescription", "city", "address", "postalCode")] CreateCrimeEventDTO crime)
+        {
+            if (ModelState.IsValid)
+            {
+                await _eventCrimeManager.AddEventCrime(crime);
+            }
+            return RedirectToAction("Index", "EventCrime");
+        }
     }
 }

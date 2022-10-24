@@ -22,5 +22,10 @@ namespace WebApp.Services
             }
             return null;
         }
+        public async Task AddEventCrime(CreateCrimeEventDTO eventCrime)
+        {
+            JsonContent content = JsonContent.Create(eventCrime);
+            var result = await _httpClient.PostAsync("http://localhost:5296/api/CrimeEvent/CreateNewCrimeEvent", content);
+        }
     }
 }
