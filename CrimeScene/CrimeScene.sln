@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimeScene", "CrimeScene\CrimeScene.csproj", "{549705A3-7C7F-4606-A8E3-33984843EB5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrimeScene", "CrimeScene\CrimeScene.csproj", "{549705A3-7C7F-4606-A8E3-33984843EB5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneCrimeApi", "SceneCrimeApi\SceneCrimeApi.csproj", "{DC219E38-1B42-4313-996E-01DC0C00A7C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SceneCrimeApi", "SceneCrimeApi\SceneCrimeApi.csproj", "{DC219E38-1B42-4313-996E-01DC0C00A7C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{E00F64A6-AFD2-474E-8861-48045D43F25E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{E00F64A6-AFD2-474E-8861-48045D43F25E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F61AA0D2-9C2E-4D29-9469-6BE9E45F7CDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E00F64A6-AFD2-474E-8861-48045D43F25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E00F64A6-AFD2-474E-8861-48045D43F25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E00F64A6-AFD2-474E-8861-48045D43F25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F61AA0D2-9C2E-4D29-9469-6BE9E45F7CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F61AA0D2-9C2E-4D29-9469-6BE9E45F7CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F61AA0D2-9C2E-4D29-9469-6BE9E45F7CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F61AA0D2-9C2E-4D29-9469-6BE9E45F7CDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

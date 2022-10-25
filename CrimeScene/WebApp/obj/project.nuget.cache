@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZSH8UUfvYxH6q6Q7eVEF8774WQvpOxaFJC+nLMC6k2MytT9VAof1dOLaiaoaeTwaxJ5pceynt+zmT58QF5DJ0g==",
+  "dgSpecHash": "3W29jX0t+6PALoNvgpPrECo9QhuUUTbtzeSKQ6lWBJVRJJirHtM/ULsDwRDuLzeStlYJg1gTb/+DVOM3PokC8A==",
   "success": true,
   "projectFilePath": "C:\\Users\\QVXP36\\Desktop\\FinalExam\\CrimeScene\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",

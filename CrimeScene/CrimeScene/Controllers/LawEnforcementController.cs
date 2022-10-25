@@ -38,6 +38,15 @@ namespace CrimeScene.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [Route("AddPoliceman")]
+        public async Task<IActionResult> AddPoliceman(CreatePolicemanDTO lawEnforcement)
+        {
+            var policemanToAdd = _mapper.Map<LawEnforcement>(lawEnforcement);
+            await _lawEnforcementRepository.Add(policemanToAdd);
+            return Ok();
+        }
+
         [HttpGet]
         [Route("GetById/{id}")]
         public async Task<IActionResult> GetById(Guid id)

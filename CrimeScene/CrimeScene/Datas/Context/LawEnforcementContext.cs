@@ -6,7 +6,7 @@ namespace CrimeScene.Datas.Context
     {
         public LawEnforcementContext(DbContextOptions<LawEnforcementContext> opt): base(opt)
         {
-
+            Database.EnsureCreated();
         }
 
         public DbSet<LawEnforcement> lawEnforcements { get; set; }

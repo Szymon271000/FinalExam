@@ -9,5 +9,7 @@ namespace CrimeScene.Repository
 
         public Task Save();
 
+        public Task Add(LawEnforcement lawEnforcement);
+
     }
 }

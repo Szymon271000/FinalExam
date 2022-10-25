@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: Database
+    environment:
+      SA_PASSWORD: "Your_password123"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+    ports:
+        - 1433:1433
+  crimescene:
+    image: ${DOCKER_REGISTRY-}crimescene
+    build:
+      context: .
+      dockerfile: CrimeScene/Dockerfile

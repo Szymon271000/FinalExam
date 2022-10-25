@@ -12,6 +12,12 @@ namespace CrimeScene.Repository
             _lawEnforcementContext = lawEnforcementContext;
         }
 
+        public async Task Add(LawEnforcement lawEnforcement)
+        {
+            await _lawEnforcementContext.lawEnforcements.AddAsync(lawEnforcement);
+            await Save();
+        }
+
         public async Task<List<LawEnforcement>> GetAll()
         {
             return await _lawEnforcementContext.lawEnforcements.Include(x=> x.Events).Include(x=> x.RankEnforcement).ToListAsync();   
