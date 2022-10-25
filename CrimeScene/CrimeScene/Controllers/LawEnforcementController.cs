@@ -2,7 +2,6 @@
 using CrimeScene.Datas.Models;
 using CrimeScene.DTO;
 using CrimeScene.Repository;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrimeScene.Controllers

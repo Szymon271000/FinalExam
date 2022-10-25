@@ -1,5 +1,4 @@
-﻿using CrimeScene.Datas.Context;
-using CrimeScene.Datas.Models;
+﻿using CrimeScene.Datas.Models;
 
 namespace CrimeScene.Repository
 {

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SceneCrimeApi.Datas.Models;
 using SceneCrimeApi.Datas.Services;
