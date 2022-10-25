@@ -1,6 +1,28 @@
 version: '3.4'
 
 services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+    depends_on:
+      - mongo
+
   db:
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     container_name: Database
@@ -10,8 +32,23 @@ services:
       MSSQL_PID: "Express"
     ports:
         - 1433:1433
+
   crimescene:
     image: ${DOCKER_REGISTRY-}crimescene
     build:
       context: .
       dockerfile: CrimeScene/Dockerfile
+
+  scenecrimeapi:
+    image: ${DOCKER_REGISTRY-}scenecrimeapi
+    build:
+      context: .
+      dockerfile: SceneCrimeApi/Dockerfile
+
+
+  webapp:
+    image: ${DOCKER_REGISTRY-}webapp
+    build:
+      context: .
+      dockerfile: WebApp/Dockerfile
+

@@ -77,5 +77,11 @@ namespace WebApp.Services
             }
             return null;
         }
+
+        public async Task AddPoliceman(CreatePolicemanDTO createPolicemanDTO)
+        {
+            JsonContent content = JsonContent.Create(createPolicemanDTO);
+            var result = await _httpClient.PostAsync(_configuration.GetValue<string>("ApiMethods:AddPoliceman"), content);
+        }
     }
 }

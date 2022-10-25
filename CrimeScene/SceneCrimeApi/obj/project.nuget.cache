@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "F9ZkfA39IeNoFUIj84r+XKE7I5D6KMFxgbHFL0PklAdcA/cvbvuDfKpeePYWMJSj19LTH2VEiVv4d4EC7CxQ/A==",
+  "dgSpecHash": "xEmJhST/XEFw8N4LAg0+YnauH3ir3D8AgElEtB8+HrN7Do/gBYd8QWd1cgNG4XVwgxX22GKDwMpGd9EZ5W2fVA==",
   "success": true,
   "projectFilePath": "C:\\Users\\QVXP36\\Desktop\\FinalExam\\CrimeScene\\SceneCrimeApi\\SceneCrimeApi.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.14.0\\microsoft.visualstudio.azure.containers.tools.targets.1.14.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
     "C:\\Users\\QVXP36\\.nuget\\packages\\mongodb.driver\\2.18.0\\mongodb.driver.2.18.0.nupkg.sha512",

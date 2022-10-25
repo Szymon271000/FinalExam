@@ -1,0 +1,143 @@
+services:
+  crimescene:
+    build:
+      context: C:\Users\QVXP36\Desktop\FinalExam\CrimeScene
+      dockerfile: CrimeScene/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: CrimeScene
+      target: base
+    container_name: CrimeScene
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: crimescene:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/net6.0/CrimeScene.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\CrimeScene:/app:rw
+    - C:\Users\QVXP36\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\QVXP36\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\QVXP36\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
+    - C:\Users\QVXP36\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\QVXP36\Desktop\FinalExam\CrimeScene:/src:rw
+  db:
+    container_name: Database
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: Your_password123
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+    - published: 1433
+      target: 1433
+  mongo:
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_ROOT_USERNAME: root
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+  mongo-express:
+    container_name: mongo-express
+    depends_on:
+      mongo:
+        condition: service_started
+    environment:
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+    image: mongo-express
+    ports:
+    - published: 8081
+      target: 8081
+    restart: always
+  scenecrimeapi:
+    build:
+      context: C:\Users\QVXP36\Desktop\FinalExam\CrimeScene
+      dockerfile: SceneCrimeApi/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: SceneCrimeApi
+      target: base
+    container_name: SceneCrimeApi
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: scenecrimeapi:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/net6.0/SceneCrimeApi.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\SceneCrimeApi:/app:rw
+    - C:\Users\QVXP36\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\QVXP36\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\QVXP36\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
+    - C:\Users\QVXP36\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\QVXP36\Desktop\FinalExam\CrimeScene:/src:rw
+  webapp:
+    build:
+      context: C:\Users\QVXP36\Desktop\FinalExam\CrimeScene
+      dockerfile: WebApp/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: WebApp
+      target: base
+    container_name: WebApp
+    entrypoint: tail -f /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DOTNET_USE_POLLING_FILE_WATCHER: '1'
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
+    image: webapp:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  "/app/bin/Debug/net6.0/WebApp.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    ports:
+    - target: 80
+    - target: 443
+    tty: true
+    volumes:
+    - C:\Users\QVXP36\Desktop\FinalExam\CrimeScene\WebApp:/app:rw
+    - C:\Users\QVXP36\vsdbg\vs2017u5:/remote_debugger:rw
+    - C:\Users\QVXP36\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\QVXP36\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
+    - C:\Users\QVXP36\.nuget\packages:/root/.nuget/packages:ro
+    - C:\Users\QVXP36\Desktop\FinalExam\CrimeScene:/src:rw
+version: '3.4'

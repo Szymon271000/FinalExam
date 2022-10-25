@@ -10,10 +10,10 @@ namespace SceneCrimeApi.Controllers
     [ApiController]
     public class CrimeEventController : ControllerBase
     {
-        private readonly ICrimeEventService _crimeEventService;
+        private readonly ICrimeRepository _crimeEventService;
         private IMapper _mapper;
 
-        public CrimeEventController(ICrimeEventService crimeEventService, IMapper mapper)
+        public CrimeEventController(ICrimeRepository crimeEventService, IMapper mapper)
         {
             _crimeEventService = crimeEventService;
             _mapper = mapper;

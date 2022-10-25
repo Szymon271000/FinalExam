@@ -1,0 +1,48 @@
+services:
+  crimescene:
+    build:
+      context: C:\Users\QVXP36\Desktop\FinalExam\CrimeScene
+      dockerfile: CrimeScene/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: crimescene
+    ports:
+    - target: 80
+    - target: 443
+    volumes:
+    - C:\Users\QVXP36\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\QVXP36\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  db:
+    container_name: Database
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: Your_password123
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+    - published: 1433
+      target: 1433
+  mongo:
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_USERNAME: root
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+  mongo-express:
+    depends_on:
+      mongo:
+        condition: service_started
+    environment:
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+    image: mongo-express
+    ports:
+    - published: 8081
+      target: 8081
+    restart: always
+version: '3.4'

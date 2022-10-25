@@ -2,7 +2,7 @@
 
 namespace SceneCrimeApi.Datas.Services
 {
-    public interface ICrimeEventService
+    public interface ICrimeRepository
     {
         Task<List<CrimeEvent>> GetEvents();
         Task AddCrimeEvent (CrimeEvent crimeEvent);

@@ -17,5 +17,7 @@ namespace WebApp.Services
 
         public Task<LawEnforcement> GetPolicemanById(string policemanId);
 
+        public Task AddPoliceman(CreatePolicemanDTO createPolicemanDTO);
+
     }
 }

@@ -25,6 +25,23 @@ namespace WebApp.Controllers
             return View();
         }
 
+        public ActionResult AddPoliceman()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public async Task<IActionResult> AddPolicemanToDatabase([Bind("Id")] CreatePolicemanDTO policeman)
+        {
+            if (ModelState.IsValid)
+            {
+                await _eventCrimeManager.AddPoliceman(policeman);
+            }
+            return RedirectToAction("Index", "EventCrime");
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> AddCrimeToDatabase([Bind("type", "shortDescription", "city", "address", "postalCode", "rapportPerson")] CreateCrimeEventDTO crime)
         {

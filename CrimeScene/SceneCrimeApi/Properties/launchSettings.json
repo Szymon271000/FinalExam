@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
@@ -11,15 +11,15 @@
   "profiles": {
     "SceneCrimeApi": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7296;http://localhost:5296",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DATABASE_NAME": "CrimeDb",
         "CRIMES_COLLECTION_NAME": "Crimes"
-      }
+      },
+      "applicationUrl": "https://localhost:7296;http://localhost:5296",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -30,6 +30,13 @@
         "DATABASE_NAME": "CrimeDb",
         "CRIMES_COLLECTION_NAME": "Crimes"
       }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
     }
   }
 }
