@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CrimeScene.DTO;
+using Microsoft.AspNetCore.Mvc;
 using SceneCrimeApi.DTOs;
 using WebApp.Services;
 
@@ -41,9 +42,16 @@ namespace WebApp.Controllers
         }
 
 
-        public async Task<ActionResult> ChangeAssignStatus(string crimeId, string lawEnforcementId)
+        public async Task<ActionResult> ChangeAssignStatus(string crimeId, string lawEnforcementId, string EventId, string Description)
         {
+            CreateCrimeSQLDTO crimeSceneToSql = new CreateCrimeSQLDTO
+            {
+                EventId = EventId,
+                Description = Description
+            };
+            await _eventCrimeManager.AddEventCrimeToSQL(crimeSceneToSql);
             await _eventCrimeManager.ChangeAssignStatus(crimeId, lawEnforcementId);
+            await _eventCrimeManager.AddEventToPoliceman(lawEnforcementId, crimeId);
             return RedirectToAction("Index", "EventCrime");
         }
 

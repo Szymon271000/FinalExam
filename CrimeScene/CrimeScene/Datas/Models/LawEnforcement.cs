@@ -10,7 +10,7 @@ namespace CrimeScene.Datas.Models
         public Guid Id { get; set; }
         public Rank? RankEnforcement { get; set; }
 
-        public List<CrimeEvent>? Events { get; set; }
+        public List<CrimeEventSQL>? Events { get; set; }
 
     }
 }

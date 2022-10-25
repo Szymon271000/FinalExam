@@ -1,4 +1,6 @@
-﻿using CrimeScene.Datas.Models;
+﻿using AutoMapper;
+using CrimeScene.Datas.Models;
+using CrimeScene.DTO;
 using CrimeScene.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +13,12 @@ namespace CrimeScene.Controllers
     {
         private readonly ILawEnforcementRepository _lawEnforcementRepository;
         private readonly IEventCrimeRepository _eventCrimeRepository;
-        public LawEnforcementController(ILawEnforcementRepository lawEnforcementRepository, IEventCrimeRepository eventCrimeRepository)
+        private readonly IMapper _mapper;
+        public LawEnforcementController(ILawEnforcementRepository lawEnforcementRepository, IEventCrimeRepository eventCrimeRepository, IMapper mapper)
         {
             _lawEnforcementRepository = lawEnforcementRepository;
             _eventCrimeRepository = eventCrimeRepository;
+            _mapper = mapper;   
         }
 
         [HttpGet]
@@ -28,9 +32,10 @@ namespace CrimeScene.Controllers
 
         [HttpPost]
         [Route("AddCrime")]
-        public async Task<IActionResult> AddCrime(CrimeEvent crimeEvent)
+        public async Task<IActionResult> AddCrime(CreateCrimeSQLDTO crimeEvent)
         {
-            await _eventCrimeRepository.Add(crimeEvent);
+            var crimeEventToAdd = _mapper.Map<CrimeEventSQL>(crimeEvent);
+            await _eventCrimeRepository.Add(crimeEventToAdd);
             return Ok();
         }
 
@@ -41,5 +46,17 @@ namespace CrimeScene.Controllers
             var policeman = await _lawEnforcementRepository.GetById(id);
             return Ok(policeman);
         }
+
+        [HttpPost]
+        [Route("AddCrimeToPoliceman/{id}/{eventId}")]
+        public async Task<IActionResult> AddCrimeToPoliceman(Guid id, string eventId)
+        {
+            var crimeEvent = await _eventCrimeRepository.GetById(eventId);
+            var policeMan = await _lawEnforcementRepository.GetById(id);
+            policeMan.Events.Add(crimeEvent);
+            await _lawEnforcementRepository.Save();
+            return Ok();
+        }
+
     }
 }

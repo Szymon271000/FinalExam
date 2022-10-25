@@ -1,5 +1,6 @@
 ﻿using CrimeScene.Datas.Context;
 using CrimeScene.Datas.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrimeScene.Repository
 {
@@ -11,10 +12,15 @@ namespace CrimeScene.Repository
             _lawEnforcementContext = lawEnforcementContext;
         }
 
-        public async Task Add(CrimeEvent crime)
+        public async Task Add(CrimeEventSQL crime)
         {
             await _lawEnforcementContext.crimeEvents.AddAsync(crime);
             await _lawEnforcementContext.SaveChangesAsync();
+        }
+
+        public async Task<CrimeEventSQL> GetById(string id)
+        {
+            return await _lawEnforcementContext.crimeEvents.Where(x => x.EventId == id).FirstOrDefaultAsync();
         }
     }
 }

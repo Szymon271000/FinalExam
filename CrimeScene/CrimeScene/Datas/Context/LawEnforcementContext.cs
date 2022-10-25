@@ -11,6 +11,6 @@ namespace CrimeScene.Datas.Context
 
         public DbSet<LawEnforcement> lawEnforcements { get; set; }
         public DbSet<Rank> ranks { get; set; }
-        public DbSet<CrimeEvent> crimeEvents { get; set; }
+        public DbSet<CrimeEventSQL> crimeEvents { get; set; }
     }
 }

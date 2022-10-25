@@ -33,7 +33,7 @@
     <br />
 </div>
 
-<form asp-controller="EventCrime" asp-action="ChangeAssignStatus" asp-route-crimeId=@Model.Id asp-route-lawEnforcementId=lawEnforcementId autocomplete="off">
+<form asp-controller="EventCrime" asp-action="ChangeAssignStatus" asp-route-EventId=@Model.Id asp-route-Description="@Model.shortDescription" asp-route-crimeId=@Model.Id asp-route-lawEnforcementId=lawEnforcementId autocomplete="off">
 
 <label asp-for="lawEnforcementId" class="control-label"></label>
 <input asp-for="lawEnforcementId" class="form-control" />

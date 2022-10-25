@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CrimeScene.Datas.Models
+namespace CrimeScene.DTO
 {
-    public class CrimeEvent
+    public class CreateCrimeSQLDTO
     {
-        [Key]
+        [Required]
         public string EventId { get; set; }
 
         public string? Description { get; set; }

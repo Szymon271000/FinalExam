@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrimeScene.Migrations
 {
     [DbContext(typeof(LawEnforcementContext))]
-    [Migration("20221024180920_init")]
+    [Migration("20221025062131_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace CrimeScene.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CrimeScene.Datas.Models.CrimeEvent", b =>
+            modelBuilder.Entity("CrimeScene.Datas.Models.CrimeEventSQL", b =>
                 {
                     b.Property<string>("EventId")
                         .HasColumnType("nvarchar(450)");
@@ -74,7 +74,7 @@ namespace CrimeScene.Migrations
                     b.ToTable("ranks");
                 });
 
-            modelBuilder.Entity("CrimeScene.Datas.Models.CrimeEvent", b =>
+            modelBuilder.Entity("CrimeScene.Datas.Models.CrimeEventSQL", b =>
                 {
                     b.HasOne("CrimeScene.Datas.Models.LawEnforcement", null)
                         .WithMany("Events")

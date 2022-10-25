@@ -18,7 +18,6 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.10",
           "MongoDB.Bson": "2.18.0",
           "MongoDB.Driver": "2.18.0",
-          "SceneCrimeApi": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -629,19 +628,6 @@
             "fileVersion": "0.6.2.0"
           }
         }
-      },
-      "SceneCrimeApi/1.0.0": {
-        "dependencies": {
-          "AutoMapper": "12.0.0",
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
-          "Json.Net": "1.0.33",
-          "MongoDB.Bson": "2.18.0",
-          "MongoDB.Driver": "2.18.0",
-          "Swashbuckle.AspNetCore": "6.2.3"
-        },
-        "runtime": {
-          "SceneCrimeApi.dll": {}
-        }
       }
     }
   },
@@ -1077,11 +1063,6 @@
       "sha512": "sha512-jPao/LdUNLUz8rn3H1D8W7wQbZsRZM0iayvWI4xGejJg3XJHT56gcmYdgmCGPdJF1UEBqUjucCRrFB+4HbJsbw==",
       "path": "zstdsharp.port/0.6.2",
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
-    },
-    "SceneCrimeApi/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

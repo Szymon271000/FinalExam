@@ -9,5 +9,6 @@ namespace CrimeScene.Repository
         public Task<LawEnforcement> GetById(Guid id);
 
         public Task Save();
+
     }
 }

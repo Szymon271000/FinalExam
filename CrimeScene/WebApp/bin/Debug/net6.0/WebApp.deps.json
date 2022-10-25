@@ -615,7 +615,6 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
           "MongoDB.Bson": "2.18.0",
           "MongoDB.Driver": "2.18.0",
-          "SceneCrimeApi": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {

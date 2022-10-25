@@ -12,8 +12,6 @@ namespace CrimeScene.Repository
             _lawEnforcementContext = lawEnforcementContext;
         }
 
-
-
         public async Task<List<LawEnforcement>> GetAll()
         {
             return await _lawEnforcementContext.lawEnforcements.Include(x=> x.Events).Include(x=> x.RankEnforcement).ToListAsync();   
@@ -21,7 +19,7 @@ namespace CrimeScene.Repository
 
         public async Task<LawEnforcement> GetById(Guid id)
         {
-            return await _lawEnforcementContext.lawEnforcements.Include(x=> x.Events).Include(x => x.RankEnforcement).FirstOrDefaultAsync();
+            return await _lawEnforcementContext.lawEnforcements.Where(x=> x.Id == id).Include(x=> x.Events).Include(x => x.RankEnforcement).FirstOrDefaultAsync();
         }
 
         public async Task Save()
