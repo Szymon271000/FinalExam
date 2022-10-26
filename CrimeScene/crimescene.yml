@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crimescene
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crimescene
+  template:
+    metadata:
+      labels:
+        app: crimescene
+    spec:
+      containers:
+        - name: crimescene
+          image: crimescene2:latest
+          imagePullPolicy: Never
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crimescene
+spec:
+  type: ClusterIP
+  selector:
+    app: crimescene
+  ports:
+  - name: crimescene
+    protocol: TCP
+    port: 80
+    targetPort: 80

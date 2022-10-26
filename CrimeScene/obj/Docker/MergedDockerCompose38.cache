@@ -1,0 +1,73 @@
+services:
+  crimescene:
+    build:
+      context: C:\Users\QVXP36\Desktop\FinalExam\CrimeScene
+      dockerfile: CrimeScene/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: crimescene
+    ports:
+    - target: 80
+    volumes:
+    - C:\Users\QVXP36\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\QVXP36\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  db:
+    container_name: Database
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: Your_password123
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+    - published: 1433
+      target: 1433
+  mongo:
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_ROOT_USERNAME: root
+    image: mongo
+    ports:
+    - published: 27017
+      target: 27017
+    restart: always
+  mongo-express:
+    container_name: mongo-express
+    depends_on:
+      mongo:
+        condition: service_started
+    environment:
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+    image: mongo-express
+    ports:
+    - published: 8081
+      target: 8081
+    restart: always
+  scenecrimeapi:
+    build:
+      context: C:\Users\QVXP36\Desktop\FinalExam\CrimeScene
+      dockerfile: SceneCrimeApi/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: scenecrimeapi
+    ports:
+    - target: 80
+    volumes:
+    - C:\Users\QVXP36\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\QVXP36\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  webapp:
+    build:
+      context: C:\Users\QVXP36\Desktop\FinalExam\CrimeScene
+      dockerfile: WebApp/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+    image: webapp
+    ports:
+    - target: 80
+    volumes:
+    - C:\Users\QVXP36\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+version: '3.4'

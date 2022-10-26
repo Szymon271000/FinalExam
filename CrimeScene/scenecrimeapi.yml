@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scenecrimeapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scenecrimeapi
+  template:
+    metadata:
+      labels:
+        app: scenecrimeapi
+    spec:
+      containers:
+        - name: scenecrimeapi
+          image: scenecrimeapi2:latest
+          imagePullPolicy: Never
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scenecrimeapi
+spec:
+  type: ClusterIP
+  selector:
+    app: scenecrimeapi
+  ports:
+  - name: scenecrimeapi
+    protocol: TCP
+    port: 80
+    targetPort: 80
